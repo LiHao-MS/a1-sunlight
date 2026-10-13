@@ -104,6 +104,7 @@
     .compass-label { fill: #6c807e; font-size: 10px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
     .compass-caption { fill: #7c8e8b; font-size: 10px; text-anchor: middle; }
 
+    .mobile-plan-hint { display: none; }
     .plan-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 15px; margin: -3px 0 16px; color: var(--muted); font-size: 11px; }
     .legend-item { display: inline-flex; align-items: center; gap: 6px; }
     .legend-swatch { width: 17px; height: 8px; border-radius: 2px; background: rgba(247, 189, 82, .55); }
@@ -252,17 +253,36 @@
 
     @media (max-width: 620px) {
       .page-shell { width: calc(100% - 20px); }
-      h1 { font-size: 31px; }
-      .intro-copy { font-size: 13px; }
+      .topbar { margin-bottom: 20px; }
+      .intro { margin-bottom: 18px; }
+      .eyebrow { margin-bottom: 8px; }
+      h1 { font-size: 29px; text-wrap: balance; }
+      .intro-copy { margin-top: 10px; font-size: 12px; }
+      .badges { gap: 6px; margin-top: 12px; }
+      .badge { padding: 4px 8px; font-size: 10px; }
+      .simulator { display: flex; flex-direction: column; align-items: stretch; gap: 14px; }
+      .plan-column, .control-column { display: contents; }
+      .time-card { order: 1; }
+      .plan-card { order: 2; }
+      .path-card { order: 3; }
+      .orientation-card { order: 4; }
+      .scene-heading { order: 5; margin-top: 7px; }
+      .scene-grid { order: 6; }
       .plan-card, .time-card, .path-card, .orientation-card, .obstruction-card, .check-card { padding: 16px; border-radius: 17px; }
       .plan-card { padding-left: 10px; padding-right: 10px; }
       .plan-card .card-header, .plan-legend, .current-reading { margin-left: 6px; margin-right: 6px; }
-      #floorPlan { min-height: 290px; }
-      .control-column { grid-template-columns: 1fr; }
-      .time-card { grid-row: auto; }
+      .plan-wrap { min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; contain: inline-size; scrollbar-width: thin; }
+      #floorPlan { width: 640px; min-width: 0; max-width: none; min-height: 0; }
+      .mobile-plan-hint { display: block; margin: 4px 6px 10px; color: var(--muted); font-size: 10px; text-align: center; }
       .scene-grid { grid-template-columns: 1fr; }
       .scene-card { min-height: 0; }
       .scene-heading span, .legend-note { display: none; }
+      input[type="range"] { height: 24px; background-size: 100% 5px; background-repeat: no-repeat; background-position: center; }
+      input[type="range"]::-webkit-slider-thumb { width: 22px; height: 22px; }
+      input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; }
+      .season-tab, .quick-time, .play-button { min-height: 44px; }
+      .speed-button { min-width: 34px; min-height: 30px; }
+      .text-button { min-height: 34px; }
       .risk-grid { grid-template-columns: 1fr; }
       .metrics { gap: 4px; }
       .metric-value { font-size: 11px; }
@@ -456,6 +476,7 @@
                 </g>
               </svg>
             </div>
+            <p class="mobile-plan-hint">户型图可左右滑动查看</p>
 
             <div class="plan-legend">
               <span class="legend-item"><span class="legend-swatch"></span>太阳直射示意</span>
