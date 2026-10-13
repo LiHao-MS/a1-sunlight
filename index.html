@@ -163,7 +163,6 @@
     .exposure-track { position: relative; height: 6px; border-radius: 999px; background: #edf0e9; overflow: hidden; }
     .exposure-segment { position: absolute; top: 0; bottom: 0; border-radius: 999px; background: #efb44e; }
     .exposure-row.sw .exposure-segment { background: #de8c42; }
-    .exposure-row.se .exposure-segment { background: #e8c36b; }
     .exposure-row.nw .exposure-segment { background: #c9955e; }
     .exposure-note { margin: 9px 0 0; color: #98a39f; font-size: 9px; }
 
@@ -347,7 +346,6 @@
                 <g id="sunPatches">
                   <polygon id="beam-balcony" class="sun-beam" clip-path="url(#clip-balcony)"/>
                   <polygon id="beam-balconyNW" class="sun-beam" clip-path="url(#clip-balcony)"/>
-                  <polygon id="beam-balconySE" class="sun-beam" clip-path="url(#clip-balcony)"/>
                   <polygon id="beam-bed1" class="sun-beam" clip-path="url(#clip-bed1)"/>
                   <polygon id="beam-bed2" class="sun-beam" clip-path="url(#clip-bed2)"/>
                   <polygon id="beam-livingNE" class="sun-beam" clip-path="url(#clip-living)"/>
@@ -394,17 +392,15 @@
                 <g>
                   <path class="inner-wall" d="M330 250V565M460 145V390M590 145V565M330 390H460M460 390H590M330 480H590M460 480V565M590 200H780M780 145V200M860 145V405M860 405H970M860 480H970"/>
                   <path class="outer-glass" d="M70 250H330V145H590V70H780V145H970V480H860V510H590V565H330V490H70Z"/>
-                  <path class="outer-wall" d="M70 250H330V145H346M442 145H478M574 145H590V132M590 84V70H608M762 70H780V82M780 132V145H796M842 145H878M952 145H970V480H860V510H838M614 510H590V565H566M484 565H438M353 565H330V490H306M70 285V250"/>
+                  <path class="outer-wall" d="M70 250H330V145H346M442 145H478M574 145H590V132M762 70H780V145H796M842 145H878M952 145H970V480H860V510H838M614 510H590V565H566M484 565H438M353 565H330V490H306M70 285V250"/>
                   <path class="inner-wall" d="M70 450H330M590 480H860M330 540H590"/>
                 </g>
 
                 <g>
-                  <line class="window-line" data-win="balcony" x1="608" y1="70" x2="762" y2="70"/>
-                  <line class="window-fine" x1="608" y1="77" x2="762" y2="77"/>
-                  <line class="window-line" data-win="balconyNW" x1="590" y1="84" x2="590" y2="132"/>
-                  <line class="window-fine" x1="597" y1="84" x2="597" y2="132"/>
-                  <line class="window-line" data-win="balconySE" x1="780" y1="82" x2="780" y2="132"/>
-                  <line class="window-fine" x1="773" y1="82" x2="773" y2="132"/>
+                  <line class="window-line" data-win="balcony" x1="590" y1="70" x2="762" y2="70"/>
+                  <line class="window-fine" x1="590" y1="77" x2="762" y2="77"/>
+                  <line class="window-line" data-win="balconyNW" x1="590" y1="70" x2="590" y2="132"/>
+                  <line class="window-fine" x1="597" y1="70" x2="597" y2="132"/>
                   <line class="window-line" data-win="bed1" x1="346" y1="145" x2="442" y2="145"/>
                   <line class="window-fine" x1="346" y1="152" x2="442" y2="152"/>
                   <line class="window-line" data-win="bed2" x1="478" y1="145" x2="574" y2="145"/>
@@ -431,7 +427,7 @@
                   <text class="room-label" x="395" y="304">次卧</text>
                   <text class="room-label" x="525" y="304">次卧</text>
                   <text class="room-label" x="685" y="140">阳台</text>
-                  <text class="room-sub" x="685" y="157">东北向 / 侧玻璃</text>
+                  <text class="room-sub" x="685" y="157">东北向 / 左侧玻璃</text>
                   <text class="room-label" x="655" y="435">客厅</text>
                   <text class="room-label small" x="817" y="282">餐厅</text>
                   <text class="room-sub" x="725" y="497">连续凸窗玻璃</text>
@@ -557,7 +553,6 @@
             </div>
             <div class="exposure">
               <div class="exposure-row ne"><span id="exposureLabelNE">东北面</span><div class="exposure-track" id="exposureNE"></div></div>
-              <div class="exposure-row se"><span id="exposureLabelSE">东南面</span><div class="exposure-track" id="exposureSE"></div></div>
               <div class="exposure-row sw"><span id="exposureLabelSW">西南面</span><div class="exposure-track" id="exposureSW"></div></div>
               <div class="exposure-row nw"><span id="exposureLabelNW">西北面</span><div class="exposure-track" id="exposureNW"></div></div>
             </div>
@@ -581,7 +576,7 @@
           <div class="obstruction-controls">
             <div>
               <label class="control-label" for="obstructionFacade"><span>检查的采光面</span></label>
-              <select class="select" id="obstructionFacade"><option value="sw">西南面 · 客厅 / 主卧</option><option value="ne">东北面 · 阳台 / 次卧 / 餐厅</option><option value="nw">西北面 · 主卧 / 阳台侧玻璃</option><option value="se">东南面 · 阳台侧玻璃</option></select>
+              <select class="select" id="obstructionFacade"><option value="sw">西南面 · 客厅 / 主卧</option><option value="ne">东北面 · 阳台 / 次卧 / 餐厅</option><option value="nw">西北面 · 主卧 / 阳台左侧玻璃</option></select>
             </div>
             <div><label class="control-label" for="buildingHeight"><span>前方楼栋高度</span><output id="buildingHeightValue">90 m</output></label><input id="buildingHeight" type="range" min="20" max="180" step="1" value="90"></div>
             <div><label class="control-label" for="buildingDistance"><span>与本户的水平距离</span><output id="buildingDistanceValue">60 m</output></label><input id="buildingDistance" type="range" min="20" max="180" step="1" value="60"></div>
@@ -612,7 +607,7 @@
           <ol class="check-list">
             <li><span class="check-number">01</span><div><strong>先确认具体楼栋与真实朝向</strong>原图注明 5 栋 03 为镜像户型；不要只凭图纸上方判断南北，现场用手机罗盘站在窗向外测。</div></li>
             <li><span class="check-number">02</span><div><strong>再拿到前楼高度、间距与方位</strong>楼栋总图比“30F 很高”更有用；同时看侧楼、山墙、阳台挑檐和未来规划。</div></li>
-            <li><span class="check-number">03</span><div><strong>上午看东北，下午看西南，傍晚看侧玻璃</strong>建议夏季 08:00–10:00、15:00–17:00 各看一次，18:00 左右再看主卧与阳台侧玻璃；冬季复核下午低太阳是否被挡。</div></li>
+            <li><span class="check-number">03</span><div><strong>上午看东北，下午看西南，傍晚看侧玻璃</strong>建议夏季 08:00–10:00、15:00–17:00 各看一次，18:00 左右再看主卧与阳台左侧玻璃；冬季复核下午低太阳是否被挡。</div></li>
             <li><span class="check-number">04</span><div><strong>最后站在真实窗洞位置</strong>分别看客厅、主卧和两间次卧；窗宽、窗高、玻璃、窗帘与家具都会改变实际体验。</div></li>
           </ol>
         </article>
@@ -633,7 +628,7 @@
             <ul>
               <li>地点按石芽岭站附近约北纬 22.63°、东经 114.14°估算，采用东八区与近似太阳位置算法。坐标来源：<a href="https://www.amap.com/place/BV10997912" target="_blank" rel="noreferrer">高德地图石芽岭站</a>，2026-10-13 查阅；并非具体房源定位。</li>
               <li>阳台默认朝东北 45°，客厅、主卧下方采光面按相反方向处理。依据为用户原图的手写标注，2026-10-13 提供；具体楼栋、镜像关系及实际罗盘朝向未确认，可在控制台调整。</li>
-              <li>玻璃规则来自用户 2026-10-13 补充：外立面非黑色部分均按玻璃处理，主卧凸窗左下转角也按玻璃处理。因此动画纳入连续凸窗、餐厅与厨房玻璃、阳台侧玻璃及主卧转角玻璃；入户门仍按门处理，其余黑色墙体按不透明处理。</li>
+              <li>玻璃与墙体范围来自用户 2026-10-13 多次标注：外立面非黑色部分按玻璃处理；主卧凸窗左下转角、阳台左上角转角也按玻璃处理；阳台右侧整条按实墙处理。入户门仍按门处理，其余黑色墙体按不透明处理。</li>
               <li>光斑依据太阳方位、高度角与简化玻璃方向绘制；不包含真实窗洞尺寸、阳台进深、挑檐、玻璃透过率、窗框、固定柜与窗帘遮挡、室内反射、云量和空气污染，因此不代表照度、得热量或规范日照时数。</li>
               <li>“理论几何窗口”仅判断太阳是否位于对应立面且高于地平线；夏至接近正午时即使仍有方位关系，太阳接近顶光，进入竖直窗的直射也可能很少。</li>
               <li>遮挡模型只计算一个正前方矩形楼栋，观察点按 30F、约 87 m 粗略假设；不能替代有楼栋坐标、高度、地形与窗位数据的正式日照分析。</li>
@@ -729,9 +724,8 @@
       }
 
       const windows = [
-        { id: "balcony", p1: [608, 70], p2: [762, 70], out: [0, -1], face: "ne", room: "阳台", scale: 1.05 },
-        { id: "balconyNW", p1: [590, 84], p2: [590, 132], out: [-1, 0], face: "nw", room: "阳台（侧玻璃）", scale: .75 },
-        { id: "balconySE", p1: [780, 82], p2: [780, 132], out: [1, 0], face: "se", room: "阳台（侧玻璃）", scale: .75 },
+        { id: "balcony", p1: [590, 70], p2: [762, 70], out: [0, -1], face: "ne", room: "阳台", scale: 1.05 },
+        { id: "balconyNW", p1: [590, 70], p2: [590, 132], out: [-1, 0], face: "nw", room: "阳台（左侧玻璃）", scale: .75 },
         { id: "bed1", p1: [346, 145], p2: [442, 145], out: [0, -1], face: "ne", room: "左侧次卧", scale: 1 },
         { id: "bed2", p1: [478, 145], p2: [574, 145], out: [0, -1], face: "ne", room: "右侧次卧", scale: 1 },
         { id: "livingNE", p1: [614, 200], p2: [756, 200], out: [0, -1], face: "ne", room: "客厅（经阳台）", scale: .78 },
@@ -743,7 +737,7 @@
         { id: "bath2SW", p1: [484, 565], p2: [566, 565], out: [0, 1], face: "sw", room: "公卫", scale: .35 },
         { id: "kitchenNE", p1: [878, 145], p2: [952, 145], out: [0, -1], face: "ne", room: "厨房", scale: .8 }
       ];
-      const faceOffsets = { ne: 0, se: 90, sw: 180, nw: 270 };
+      const faceOffsets = { ne: 0, sw: 180, nw: 270 };
       const faceAzimuth = face => mod(state.orientation + faceOffsets[face], 360);
       const faceDisplayName = face => bearingName(faceAzimuth(face));
 
@@ -810,7 +804,7 @@
           copy = state.season === "summer" ? "连续玻璃增加受光面，也会增加夏季午后的玻璃得热。窗帘和外墙蓄热会影响傍晚体感，前楼与侧楼也可能改变实际受光。" : "冬季太阳高度较低，西南面的光斑通常更深，但更容易被前楼遮挡，也更需要注意眩光。";
         } else {
           title = `${faceDisplayName(strongest.data.face)}侧玻璃：额外的斜射光`;
-          copy = "按“非黑色立面均为玻璃”的补充规则，主卧侧面与阳台侧面也参与受光。固定柜、窗帘和阳台挑檐未建模，实际进光可能更弱。";
+          copy = "按已确认的玻璃范围，主卧转角与阳台左侧也参与受光。固定柜、窗帘和阳台挑檐未建模，实际进光可能更弱。";
         }
         if (sun.altitude > 0 && sun.altitude < 8 && maxPower >= .035) copy += " 此刻太阳贴近地平线，大气衰减与遮挡都会很明显。";
         $("readingTitle").textContent = title;
@@ -991,7 +985,7 @@
         $("orientationValue").textContent = `${bearingName(state.orientation)} · ${Math.round(state.orientation)}°`;
         $("orientationSlider").value = state.orientation;
         setRangeProgress($("orientationSlider"));
-        const optionRooms = { ne: "阳台 / 次卧 / 餐厅", se: "阳台侧玻璃", sw: "客厅 / 主卧", nw: "主卧 / 阳台侧玻璃" };
+        const optionRooms = { ne: "阳台 / 次卧 / 餐厅", sw: "客厅 / 主卧", nw: "主卧 / 阳台左侧玻璃" };
         Array.from($("obstructionFacade").options).forEach(option => { option.textContent = `${faceDisplayName(option.value)}面 · ${optionRooms[option.value]}`; });
         renderSunPaths();
         renderExposure();
