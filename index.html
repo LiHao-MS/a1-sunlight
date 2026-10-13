@@ -104,7 +104,6 @@
     .compass-label { fill: #6c807e; font-size: 10px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
     .compass-caption { fill: #7c8e8b; font-size: 10px; text-anchor: middle; }
 
-    .mobile-plan-hint { display: none; }
     .plan-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 15px; margin: -3px 0 16px; color: var(--muted); font-size: 11px; }
     .legend-item { display: inline-flex; align-items: center; gap: 6px; }
     .legend-swatch { width: 17px; height: 8px; border-radius: 2px; background: rgba(247, 189, 82, .55); }
@@ -271,9 +270,8 @@
       .plan-card, .time-card, .path-card, .orientation-card, .obstruction-card, .check-card { padding: 16px; border-radius: 17px; }
       .plan-card { padding-left: 10px; padding-right: 10px; }
       .plan-card .card-header, .plan-legend, .current-reading { margin-left: 6px; margin-right: 6px; }
-      .plan-wrap { min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; contain: inline-size; scrollbar-width: thin; }
-      #floorPlan { width: 640px; min-width: 0; max-width: none; min-height: 0; }
-      .mobile-plan-hint { display: block; margin: 4px 6px 10px; color: var(--muted); font-size: 10px; text-align: center; }
+      .plan-wrap { min-width: 0; }
+      #floorPlan { width: 100%; min-width: 0; max-width: 100%; min-height: 0; }
       .scene-grid { grid-template-columns: 1fr; }
       .scene-card { min-height: 0; }
       .scene-heading span, .legend-note { display: none; }
@@ -476,7 +474,6 @@
                 </g>
               </svg>
             </div>
-            <p class="mobile-plan-hint">户型图可左右滑动查看</p>
 
             <div class="plan-legend">
               <span class="legend-item"><span class="legend-swatch"></span>太阳直射示意</span>
